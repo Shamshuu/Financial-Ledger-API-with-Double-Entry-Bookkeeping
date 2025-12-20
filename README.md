@@ -207,7 +207,3 @@ This implementation satisfies:
 - Business rule enforcement
 
 ---
-
-## Author
-GPP Program Submission  
-Backend Financial Ledger System
