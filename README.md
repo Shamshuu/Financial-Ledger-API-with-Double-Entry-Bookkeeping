@@ -70,7 +70,7 @@ financial-ledger-api/
 
 ### 1. Clone Repository
 ```bash
-git clone <repo-url>
+git clone https://github.com/Shamshuu/Financial-Ledger-API-with-Double-Entry-Bookkeeping
 cd Financial-Ledger-API-with-Double-Entry-Bookkeeping
 ```
 
