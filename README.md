@@ -100,30 +100,30 @@ A robust financial ledger REST API built with **Java 21** and **Spring Boot 3.2*
 ## Database Schema (ERD)
 
 ```
-┌──────────────────────────┐       ┌──────────────────────────────┐
-│        accounts          │       │        transactions          │
-├──────────────────────────┤       ├──────────────────────────────┤
+┌──────────────────────────┐       ┌─────────────────────────────┐
+│        accounts          │       │        transactions         │
+├──────────────────────────┤       ├─────────────────────────────┤
 │ PK  id          UUID     │       │ PK  id            UUID      │
 │     user_id     VARCHAR  │       │     type          VARCHAR   │
 │     account_type VARCHAR │       │ FK  source_account_id UUID  │──┐
 │     currency    CHAR(3)  │       │ FK  dest_account_id   UUID  │──┤
 │     status      VARCHAR  │       │     amount        DECIMAL   │  │
-│     created_at  TIMESTAMP│       │     currency      CHAR(3)  │  │
+│     created_at  TIMESTAMP│       │     currency      CHAR(3)   │  │
 │     updated_at  TIMESTAMP│       │     status        VARCHAR   │  │
 └─────────┬────────────────┘       │     description   VARCHAR   │  │
           │                        │     created_at    TIMESTAMP │  │
           │  1                     │     updated_at    TIMESTAMP │  │
-          │  ┆                     └──────────┬───────────────────┘  │
+          │  ┆                     └──────────┬──────────────────┘  │
           │  ┆                                │                     │
           │  ┆ N                              │ 1                   │
           │  ┆                                │ ┆                   │
-┌─────────▼────────────────┐                  │ ┆ N                │
-│     ledger_entries       │                  │ ┆                  │
-│     (IMMUTABLE)          │◄─────────────────┘ │                  │
-├──────────────────────────┤                    │                  │
-│ PK  id            UUID   │                    │                  │
-│ FK  account_id    UUID   │────────────────────┘                  │
-│ FK  transaction_id UUID  │───────────────────────────────────────┘
+┌─────────▼────────────────┐                  │ ┆ N                 │
+│     ledger_entries       │                  │ ┆                   │
+│     (IMMUTABLE)          │◄─────────────────┘ │                   │
+├──────────────────────────┤                    │                   │
+│ PK  id            UUID   │                    │                   │
+│ FK  account_id    UUID   │────────────────────┘                   │
+│ FK  transaction_id UUID  │────────────────────────────────────────┘
 │     entry_type    VARCHAR│   (DEBIT or CREDIT)
 │     amount        DECIMAL│   (always positive, precision 19,4)
 │     created_at  TIMESTAMP│
@@ -408,12 +408,12 @@ Client                  Controller              TransactionService            DB
   │                        │                          │  (lock source & dest,     │
   │                        │                          │   ordered by UUID)        │
   │                        │                          │──────────────────────────>│
-  │                        │                          │  ◄── accounts locked ────│
+  │                        │                          │  ◄── accounts locked ─────│
   │                        │                          │                           │
   │                        │                          │  SUM(ledger_entries)      │
-  │                        │                          │  → check balance ≥ amt   │
+  │                        │                          │  → check balance ≥ amt    │
   │                        │                          │──────────────────────────>│
-  │                        │                          │  ◄── balance OK ─────────│
+  │                        │                          │  ◄── balance OK ──────────│
   │                        │                          │                           │
   │                        │                          │  INSERT transaction       │
   │                        │                          │  (status = PENDING)       │
@@ -428,9 +428,9 @@ Client                  Controller              TransactionService            DB
   │                        │                          │──────────────────────────>│
   │                        │                          │                           │
   │                        │                          │  SUM(ledger_entries)      │
-  │                        │                          │  → verify balance ≥ 0    │
+  │                        │                          │  → verify balance ≥ 0     │
   │                        │                          │──────────────────────────>│
-  │                        │                          │  ◄── verified ───────────│
+  │                        │                          │  ◄── verified ────────────│
   │                        │                          │                           │
   │                        │                          │  UPDATE transaction       │
   │                        │                          │  (status = COMPLETED)     │
@@ -439,7 +439,7 @@ Client                  Controller              TransactionService            DB
   │                        │                          │  COMMIT                   │
   │                        │                          │──────────────────────────>│
   │                        │                          │                           │
-  │  ◄── 201 Created ─────│◄─────────────────────────│                           │
+  │  ◄── 201 Created ─────│◄──────────────────────────│                           │
   │      (TransactionResp) │                          │                           │
 ```
 
