@@ -153,7 +153,7 @@ A robust financial ledger REST API built with **Java 21** and **Spring Boot 3.2*
 
 ```bash
 # Clone the repository
-git clone https://github.com/Shamshuu/Financial-Ledger-API-with-Double-Entry-Bookkeeping.git
+git clone https://github.com/Shamshuu/Financial-Ledger-API-with-Double-Entry-Bookkeeping
 cd Financial-Ledger-API-with-Double-Entry-Bookkeeping
 
 # Build and start all services
@@ -476,7 +476,3 @@ A complete Postman collection is included at [`postman/Financial_Ledger_API.post
 | 15 | Missing required fields | 400, validation errors |
 
 ---
-
-## License
-
-This project is for educational purposes.
