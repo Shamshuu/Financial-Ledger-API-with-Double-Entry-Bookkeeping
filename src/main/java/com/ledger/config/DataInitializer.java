@@ -16,6 +16,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
+/**
+ *    preventing any UPDATE or DELETE operations at the database level.
+ */
 @Component
 @RequiredArgsConstructor
 public class DataInitializer implements ApplicationRunner {
