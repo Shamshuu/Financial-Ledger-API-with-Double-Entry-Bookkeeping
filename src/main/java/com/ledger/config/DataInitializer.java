@@ -33,7 +33,6 @@ public class DataInitializer implements ApplicationRunner {
     }
 
     /**
-     * and withdrawals (credit side), maintaining double-entry integrity.
      */
     private void createSystemAccount() {
         if (accountRepository.findById(TransactionService.SYSTEM_ACCOUNT_ID).isEmpty()) {
