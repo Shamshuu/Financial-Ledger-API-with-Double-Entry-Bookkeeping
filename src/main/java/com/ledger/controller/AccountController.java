@@ -38,8 +38,6 @@ public class AccountController {
         return ResponseEntity.ok(response);
     }
 
-    /**
-     */
     @GetMapping("/{accountId}/ledger")
     public ResponseEntity<List<LedgerEntryResponse>> getLedger(@PathVariable UUID accountId) {
         // Verify the account exists first
