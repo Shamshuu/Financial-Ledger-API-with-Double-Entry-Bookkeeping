@@ -20,7 +20,6 @@ public class TransactionController {
     private final TransactionService transactionService;
 
     /**
-     * POST /transfers — Execute a financial transfer between two internal accounts.
      */
     @PostMapping("/transfers")
     public ResponseEntity<TransactionResponse> transfer(
