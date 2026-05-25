@@ -28,8 +28,7 @@ public class TransactionController {
         TransactionResponse response = transactionService.executeTransfer(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
-
-    
+ 
     @PostMapping("/deposits")
     public ResponseEntity<TransactionResponse> deposit(
             @Valid @RequestBody DepositRequest request) {
