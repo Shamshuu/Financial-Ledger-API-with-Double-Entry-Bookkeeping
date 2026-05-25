@@ -39,7 +39,6 @@ public class AccountController {
     }
 
     /**
-     * GET /accounts/{accountId}/ledger — Fetch chronological ledger entries for an account.
      */
     @GetMapping("/{accountId}/ledger")
     public ResponseEntity<List<LedgerEntryResponse>> getLedger(@PathVariable UUID accountId) {
