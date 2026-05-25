@@ -50,7 +50,6 @@ public class DataInitializer implements ApplicationRunner {
     }
 
     /**
-     * on the ledger_entries table, enforcing immutability at the database level.
      * This complements the Hibernate @Immutable annotation for defence-in-depth.
      */
     private void createImmutabilityTrigger() {
