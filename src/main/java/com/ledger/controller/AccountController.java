@@ -33,7 +33,6 @@ public class AccountController {
     }
 
     /**
-     * GET /accounts/{accountId} — Retrieve account details with calculated balance.
      */
     @GetMapping("/{accountId}")
     public ResponseEntity<AccountResponse> getAccount(@PathVariable UUID accountId) {
