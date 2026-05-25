@@ -30,7 +30,6 @@ public class TransactionController {
     }
 
     /**
-     * POST /deposits — Simulate a deposit into an account.
      */
     @PostMapping("/deposits")
     public ResponseEntity<TransactionResponse> deposit(
