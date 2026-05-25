@@ -39,7 +39,6 @@ public class TransactionController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-
     @PostMapping("/withdrawals")
     public ResponseEntity<TransactionResponse> withdraw(
             @Valid @RequestBody WithdrawalRequest request) {
