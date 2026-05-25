@@ -25,8 +25,6 @@ public class AccountController {
     private final LedgerService ledgerService;
     private final AccountRepository accountRepository;
 
-    /**
-     */
     @PostMapping
     public ResponseEntity<AccountResponse> createAccount(
             @Valid @RequestBody CreateAccountRequest request) {
