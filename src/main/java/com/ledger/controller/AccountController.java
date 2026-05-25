@@ -26,7 +26,6 @@ public class AccountController {
     private final AccountRepository accountRepository;
 
     /**
-     * POST /accounts — Create a new user account.
      */
     @PostMapping
     public ResponseEntity<AccountResponse> createAccount(
