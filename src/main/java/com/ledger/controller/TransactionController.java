@@ -19,7 +19,6 @@ public class TransactionController {
 
     private final TransactionService transactionService;
 
-    
     @PostMapping("/transfers")
     public ResponseEntity<TransactionResponse> transfer(
             @Valid @RequestBody TransferRequest request) {
