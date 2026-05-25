@@ -33,7 +33,6 @@ public class DataInitializer implements ApplicationRunner {
     }
 
     /**
-     * This account serves as the counterparty for deposits (debit side)
      * and withdrawals (credit side), maintaining double-entry integrity.
      */
     private void createSystemAccount() {
