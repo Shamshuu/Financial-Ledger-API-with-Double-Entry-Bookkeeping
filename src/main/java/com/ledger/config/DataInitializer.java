@@ -16,9 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
-/**
- *    preventing any UPDATE or DELETE operations at the database level.
- */
 @Component
 @RequiredArgsConstructor
 public class DataInitializer implements ApplicationRunner {
@@ -57,7 +54,6 @@ public class DataInitializer implements ApplicationRunner {
     }
 
     /**
-     * Installs a PostgreSQL trigger that prevents UPDATE and DELETE operations
      * on the ledger_entries table, enforcing immutability at the database level.
      * This complements the Hibernate @Immutable annotation for defence-in-depth.
      */
