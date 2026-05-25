@@ -17,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 
 /**
- * 2. Installs a PostgreSQL trigger that enforces immutability on the ledger_entries table,
  *    preventing any UPDATE or DELETE operations at the database level.
  */
 @Component
