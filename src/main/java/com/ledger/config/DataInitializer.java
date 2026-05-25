@@ -49,8 +49,6 @@ public class DataInitializer implements ApplicationRunner {
         }
     }
 
-    /**
-     */
     private void createImmutabilityTrigger() {
         try {
             jdbcTemplate.execute("""
