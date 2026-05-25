@@ -32,8 +32,6 @@ public class DataInitializer implements ApplicationRunner {
         createImmutabilityTrigger();
     }
 
-    /**
-     */
     private void createSystemAccount() {
         if (accountRepository.findById(TransactionService.SYSTEM_ACCOUNT_ID).isEmpty()) {
             Account system = new Account();
