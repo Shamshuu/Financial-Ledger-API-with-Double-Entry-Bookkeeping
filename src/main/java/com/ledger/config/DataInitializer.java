@@ -17,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 
 /**
- * Initializes essential data and database constraints on application startup.
  * <p>
  * 1. Creates the system/external account used for deposits and withdrawals.
  * 2. Installs a PostgreSQL trigger that enforces immutability on the ledger_entries table,
