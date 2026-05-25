@@ -40,7 +40,6 @@ public class AccountController {
 
     @GetMapping("/{accountId}/ledger")
     public ResponseEntity<List<LedgerEntryResponse>> getLedger(@PathVariable UUID accountId) {
-        // Verify the account exists first
         if (!accountRepository.existsById(accountId)) {
             throw new AccountNotFoundException(accountId);
         }
