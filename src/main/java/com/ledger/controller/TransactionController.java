@@ -40,7 +40,6 @@ public class TransactionController {
     }
 
     /**
-     * POST /withdrawals — Simulate a withdrawal from an account.
      */
     @PostMapping("/withdrawals")
     public ResponseEntity<TransactionResponse> withdraw(
