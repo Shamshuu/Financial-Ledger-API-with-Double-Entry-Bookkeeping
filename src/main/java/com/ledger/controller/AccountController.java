@@ -32,7 +32,6 @@ public class AccountController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-
     @GetMapping("/{accountId}")
     public ResponseEntity<AccountResponse> getAccount(@PathVariable UUID accountId) {
         AccountResponse response = accountService.getAccount(accountId);
