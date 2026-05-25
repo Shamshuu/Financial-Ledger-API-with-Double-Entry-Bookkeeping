@@ -50,7 +50,6 @@ public class DataInitializer implements ApplicationRunner {
     }
 
     /**
-     * This complements the Hibernate @Immutable annotation for defence-in-depth.
      */
     private void createImmutabilityTrigger() {
         try {
